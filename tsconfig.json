@@ -1,0 +1,26 @@
+{
+  "extends": "ts-node/node16/tsconfig.json",
+
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "files": true
+  },
+
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true,
+
+    "resolveJsonModule": true,
+
+    "rootDir": ".",
+    "baseUrl": "packages",
+
+    "paths": {
+      "@/*": ["*"]
+    }
+  },
+
+  "exclude": [
+    "**/node_modules"
+  ]
+}

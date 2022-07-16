@@ -1,0 +1,33 @@
+{
+  "name": "media-monorepo",
+  "version": "0.0.0-development",
+  "description": "Media content monorepo of @intradoc.",
+  "author": "Richard King <richrdkng@gmail.com> (https://www.richrdkng.com)",
+  "license": "ISC",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intradoc/media.git"
+  },
+  "bugs": {
+    "url": "https://github.com/intradoc/media/issues"
+  },
+  "homepage": "https://github.com/intradoc/media#readme",
+  "engines": {
+    "node": ">=16.x"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "init": "npm i && lerna bootstrap",
+    "reinit": "npm run purge && npm run init",
+    "clear-build-files": "bash scripts/clear-build-files.sh",
+    "purge-dependency-caches": "bash scripts/purge-dependency-caches.sh",
+    "purge": "npm run clear-build-files && npm run purge-dependency-caches",
+    "check-updates": "lerna exec --concurrency 1 -- npx --yes npm-check-updates"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

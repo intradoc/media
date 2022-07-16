@@ -1,0 +1,61 @@
+name: CI
+
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # ----------------------------------------------------------------------------------------------
+
+    - name: get npm cache directory
+      id: npm-cache-dir
+      run: |
+        echo "::set-output name=dir::$(npm config get cache)"
+
+    - uses: actions/cache@v3
+      id: npm-cache
+      with:
+        path: ${{ steps.npm-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node
+
+    # ----------------------------------------------------------------------------------------------
+
+    - name: init
+      run: >
+        npm ci
+        && npx lerna bootstrap
+
+    - name: lint
+      run: >
+        npx lerna exec --concurrency 1 --
+        npm run lint --if-present
+
+    - name: test
+      run: >
+        npx lerna exec --concurrency 1 --
+        npm run test --if-present
+
+    - name: prepare
+      run: >
+        npx lerna exec --concurrency 1 --
+        npm run prep --if-present
+
+    - name: release
+      run: >
+        npx lerna exec --concurrency 1 --
+        npx --no-install semantic-release -e semantic-release-monorepo
+
+    # ----------------------------------------------------------------------------------------------
+
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
