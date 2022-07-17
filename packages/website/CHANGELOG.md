@@ -1,3 +1,10 @@
+# [website-v1.0.1](https://github.com/intradoc/media/compare/website-v1.0.0...website-v1.0.1) (2022-07-17)
+
+
+### Bug Fixes
+
+* **website:** remove $ from h1 ([acb6645](https://github.com/intradoc/media/commit/acb66457eb8aaaa95f3ec966b3b1969d33432923))
+
 # website-v1.0.0 (2022-07-17)
 
 
