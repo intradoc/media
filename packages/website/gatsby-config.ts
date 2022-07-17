@@ -1,6 +1,13 @@
 import type { GatsbyConfig } from 'gatsby'
 
+import { payload } from './src/data/metadata'
+
 const config: GatsbyConfig = {
+  siteMetadata: {
+    // needed for gatsby-plugin-sitemap
+    siteUrl: payload.url,
+  },
+
   plugins: [
     'gatsby-plugin-emotion',
 
