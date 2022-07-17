@@ -1,5 +1,9 @@
 import * as React from "react"
 
+import { useStaticQuery, graphql } from 'gatsby'
+
+import type { MetadataQuery } from '../types/data'
+
 // styles
 const pageStyles = {
   color: "#232129",
@@ -139,15 +143,22 @@ const links = [
 
 // markup
 const IndexPage = () => {
+  const { dataMetadata: metadata } = useStaticQuery<MetadataQuery>(graphql`
+    query {
+      dataMetadata {
+        title
+        url
+        version
+      }
+    }
+  `)
+
+  console.log(metadata)
+
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulationsss
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        🎉🎉🎉
-      </h1>
+      <h1 style={headingStyles}>{metadata.title} - ${metadata.version}</h1>
+
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
         update in real-time. 😎

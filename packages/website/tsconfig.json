@@ -16,10 +16,13 @@
     "skipLibCheck": true
   },
 
+  "references": [
+    { "path": "../utils" }
+  ],
+
   "include": [
     "plugins",
     "src",
-    "gatsby-node.ts",
-    "gatsby-config.ts",
+    "gatsby*.ts"
   ]
 }

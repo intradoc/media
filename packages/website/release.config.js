@@ -6,7 +6,10 @@ module.exports = {
     '@semantic-release/changelog',
     '@semantic-release/github',
     ['@semantic-release/exec', {
-      prepareCmd: 'npm run build',
+      prepareCmd: [
+        'export SEMREL_NEXT_RELEASE_VERSION=${nextRelease.version}',
+        'npm run deploy',
+      ].join(' && ')
     }],
     ['@semantic-release/git', {
       assets: [
