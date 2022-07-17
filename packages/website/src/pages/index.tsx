@@ -157,7 +157,7 @@ const IndexPage = () => {
 
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>{metadata.title} - ${metadata.version}</h1>
+      <h1 style={headingStyles}>{metadata.title} - {metadata.version}</h1>
 
       <p style={paragraphStyles}>
         Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
