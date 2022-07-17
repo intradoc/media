@@ -21,14 +21,6 @@
     "assets",
     "intradoc"
   ],
-  "scripts": {
-    "lint": "tsc --noEmit",
-    "test": "jest",
-    "prep:1": "rm -rf .dist && mkdir .dist",
-    "prep:2": "cp ../../LICENSE* README* package.json .dist",
-    "prep": "npm run prep:1 && npm run prep:2",
-    "build": "tsc --project tsconfig.build.json"
-  },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/exec": "^6.0.3",
