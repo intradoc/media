@@ -1,3 +1,10 @@
+# [website-v1.0.2](https://github.com/intradoc/media/compare/website-v1.0.1...website-v1.0.2) (2022-07-18)
+
+
+### Bug Fixes
+
+* **website:** fix deploy config ([febf3db](https://github.com/intradoc/media/commit/febf3dbebfdb30c8a6a114145dada1bbfdb6850f))
+
 # [website-v1.0.1](https://github.com/intradoc/media/compare/website-v1.0.0...website-v1.0.1) (2022-07-17)
 
 
