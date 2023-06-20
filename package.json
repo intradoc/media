@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Media content monorepo of @intradoc.",
   "author": "Richard King <richrdkng@gmail.com> (https://www.richrdkng.com)",
-  "license": "ISC",
+  "license": "SEE LICENSE IN README.md",
   "private": true,
   "repository": {
     "type": "git",
@@ -14,20 +14,17 @@
   },
   "homepage": "https://github.com/intradoc/media#readme",
   "engines": {
-    "node": ">=16.x"
+    "node": ">= 18"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "init": "npm i && lerna bootstrap",
-    "reinit": "npm run purge && npm run init",
-    "clear-build-files": "bash scripts/clear-build-files.sh",
-    "purge-dependency-caches": "bash scripts/purge-dependency-caches.sh",
-    "purge": "npm run clear-build-files && npm run purge-dependency-caches",
+    "reinit": "npm run _purge && npm run init",
+    "_clear-build-files": "bash scripts/clear-build-files.sh",
+    "_purge-dependency-caches": "bash scripts/purge-dependency-caches.sh",
+    "_purge": "npm run _clear-build-files && npm run _purge-dependency-caches",
     "check-updates": "lerna exec --concurrency 1 -- npx --yes npm-check-updates"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^6.6.2"
   }
 }
