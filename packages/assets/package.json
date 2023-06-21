@@ -1,12 +1,12 @@
 {
   "name": "assets",
   "version": "0.0.0-development",
-  "description": "Assets repo of @intradoc.",
+  "description": "Assets of @intradoc monorepo",
   "author": "Richard King <richrdkng@gmail.com> (https://www.richrdkng.com)",
-  "license": "ISC",
+  "license": "SEE LICENSE IN README.md",
   "private": true,
   "engines": {
-    "node": ">=16.x"
+    "node": ">= 18"
   },
   "repository": {
     "type": "git",
@@ -16,23 +16,18 @@
     "url": "https://github.com/intradoc/media/issues"
   },
   "homepage": "https://github.com/intradoc/media#readme",
-  "keywords": [
-    "media",
-    "assets",
-    "intradoc"
-  ],
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node18": "^1.0.3",
     "@types/jest": "^28.1.4",
-    "@types/node": "^18.0.1",
+    "@types/node": "^18.16.18",
     "jest": "^28.1.2",
     "semantic-release": "^18.0.1",
     "semantic-release-monorepo": "^7.0.5",
     "ts-jest": "^28.0.5",
-    "ts-node": "^10.8.2",
+    "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.0.0",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
