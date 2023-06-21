@@ -14,9 +14,9 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     '@semantic-release/github',
-    ['@semantic-release/exec', {
-      prepareCmd: 'export SEMREL_NEXT_RELEASE_VERSION=${nextRelease.version} && npm run deploy',
-    }],
+    // ['@semantic-release/exec', {
+    //   prepareCmd: 'export SEMREL_NEXT_RELEASE_VERSION=${nextRelease.version} && npm run deploy',
+    // }],
     ['@semantic-release/git', {
       assets: [
         'CHANGELOG*',
