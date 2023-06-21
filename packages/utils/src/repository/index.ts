@@ -103,7 +103,7 @@ export class Repository {
   }
 
   private async _pushRepository () {
-    await this._run('git push -u origin master --force')
+    await this._run('git push -u origin main --force')
   }
 }
 

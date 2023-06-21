@@ -1,7 +1,15 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@tsconfig/node18/tsconfig.json",
+
+  "compilerOptions": {
+    "composite": true
+  },
 
   "include": [
     "src"
+  ],
+
+  "exclude": [
+    "node_modules"
   ]
 }
