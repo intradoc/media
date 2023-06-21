@@ -44,6 +44,22 @@ export class Repository {
     await this._prepareDir()
     await this._cloneRepository()
     await this._clearRepository()
+
+    {
+      const { stdout } = await this._run('pwd')
+
+      console.log('---------------------------------------------')
+      console.log(stdout)
+      console.log('---------------------------------------------')
+    }
+
+    {
+      const { stdout } = await this._run('ls -lah1')
+
+      console.log('---------------------------------------------')
+      console.log(stdout)
+      console.log('---------------------------------------------')
+    }
   }
 
   async update () {
@@ -62,7 +78,7 @@ export class Repository {
       cmd = command.join(' ')
     }
 
-    await execa.command(
+    return execa.command(
       cmd,
       {
         cwd:   this._distPath,
@@ -103,7 +119,12 @@ export class Repository {
   }
 
   private async _pushRepository () {
-    await this._run('git push -u origin main --force')
+    try {
+      await this._run('git push -u origin main --force')
+    } catch (e) {
+      console.log(e)
+      throw e
+    }
   }
 }
 
